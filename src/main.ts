@@ -16,12 +16,44 @@ console.log(leftfish + " " + fish + " " + rightfish);
 
 let counter = 0;
 let tile = "X";
-for (let i = 0; i < 100; i++) {
-  // delay(1000);
-  setTimeout(() => {
+let isForward = true;
+let endNode = 10;
+const logger = (counter: number, tile: string) => {
+  if (counter < endNode && isForward) {
     counter++;
     console.log(tile.repeat(counter));
-  }, 5000);
-  // counter++;
+  }
+  if (counter === endNode) {
+    isForward = false;
+    // counter = 9;
+    // console.log(tile.repeat(counter));
+  }
+  if (counter > 0 && !isForward) {
+    counter--;
+    console.log(tile.repeat(counter));
+  }
+
+  if (counter === 0) {
+    endNode = endNode + 1;
+    isForward = true;
+  }
+
   // console.log(tile.repeat(counter));
-}
+  setTimeout(() => {
+    logger(counter, tile);
+  }, 50);
+};
+
+logger(counter, tile);
+
+// const recursiveLog = (counter: number, tile: string) => {
+//   counter++;
+//   // while (counter > 10) {
+//   //   console.log(tile.repeat(counter));
+//   //   setTimeout(() => {
+//   //     recursiveLog(counter, tile);
+//   //   }, 50);
+//   // }
+// };
+
+// recursiveLog(counter, tile);
