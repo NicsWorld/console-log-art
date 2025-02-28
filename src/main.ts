@@ -15,7 +15,7 @@ const fish = "<(o_o)>";
 console.log(leftfish + " " + fish + " " + rightfish);
 
 let counter = 0;
-let tile = "X";
+let tile = "|";
 let isForward = true;
 let endNode = 10;
 const logger = (counter: number, tile: string) => {
@@ -25,8 +25,6 @@ const logger = (counter: number, tile: string) => {
   }
   if (counter === endNode) {
     isForward = false;
-    // counter = 9;
-    // console.log(tile.repeat(counter));
   }
   if (counter > 0 && !isForward) {
     counter--;
@@ -34,11 +32,10 @@ const logger = (counter: number, tile: string) => {
   }
 
   if (counter === 0) {
-    endNode = endNode + 1;
+    if (endNode < 20) endNode = endNode + 1;
     isForward = true;
   }
 
-  // console.log(tile.repeat(counter));
   setTimeout(() => {
     logger(counter, tile);
   }, 50);
