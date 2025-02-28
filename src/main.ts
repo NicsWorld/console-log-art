@@ -42,15 +42,3 @@ const logger = (counter: number, tile: string) => {
 };
 
 logger(counter, tile);
-
-// const recursiveLog = (counter: number, tile: string) => {
-//   counter++;
-//   // while (counter > 10) {
-//   //   console.log(tile.repeat(counter));
-//   //   setTimeout(() => {
-//   //     recursiveLog(counter, tile);
-//   //   }, 50);
-//   // }
-// };
-
-// recursiveLog(counter, tile);
