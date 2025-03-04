@@ -19,7 +19,10 @@ let endNode = 10;
 const logger = (counter: number, tile: string) => {
   if (counter < endNode && isForward) {
     counter++;
-    console.log(tile.repeat(counter));
+    const stringWithSpaces = " ".repeat(counter) + tile.repeat(counter);
+    console.log(stringWithSpaces);
+    // console.log(stringWithSpaces + tile.repeat(counter));
+    // console.log(tile.repeat(counter));
   }
   if (counter === endNode) {
     isForward = false;
