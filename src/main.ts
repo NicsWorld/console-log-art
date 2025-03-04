@@ -21,8 +21,6 @@ const logger = (counter: number, tile: string) => {
     counter++;
     const stringWithSpaces = " ".repeat(50) + tile.repeat(counter);
     console.log(stringWithSpaces);
-    // console.log(stringWithSpaces + tile.repeat(counter));
-    // console.log(tile.repeat(counter));
   }
   if (counter === endNode) {
     isForward = false;
