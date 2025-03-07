@@ -33,7 +33,8 @@ const logger = (counter: number, tile: string) => {
 
   if (counter === 0) {
     if (endNode < 20) endNode = endNode + 1;
-    isForward = true;
+    // turn on ifniite
+    // isForward = true;
   }
 
   setTimeout(() => {
@@ -42,3 +43,22 @@ const logger = (counter: number, tile: string) => {
 };
 
 logger(counter, tile);
+/*
+    |
+    ||
+    |||
+    ||||
+    |||||
+    ||||||
+    |||||
+    ||||
+    |||
+    ||
+    |
+ 
+|    |
+
+
+
+
+*/
