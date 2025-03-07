@@ -62,3 +62,14 @@ logger(counter, tile);
 
 
 */
+
+const clicky = () => {
+  console.log("clicky");
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  const button = document.querySelector("button");
+  if (button) {
+    button.addEventListener("click", clicky);
+  }
+});
