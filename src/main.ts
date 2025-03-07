@@ -16,6 +16,7 @@ let counter = 0;
 let tile = "|";
 let isForward = true;
 let endNode = 10;
+let maxLoops = 0;
 const logger = (counter: number, tile: string) => {
   if (counter < endNode && isForward) {
     counter++;
@@ -32,9 +33,13 @@ const logger = (counter: number, tile: string) => {
   }
 
   if (counter === 0) {
+    maxLoops++;
     if (endNode < 20) endNode = endNode + 1;
-    // turn on ifniite
-    // isForward = true;
+    isForward = true;
+  }
+
+  if (maxLoops > 5) {
+    return;
   }
 
   setTimeout(() => {
@@ -64,7 +69,10 @@ logger(counter, tile);
 */
 
 const clicky = () => {
-  console.log("clicky");
+  const square = document.querySelector(".square");
+  if (square) {
+    square.classList.toggle("animate");
+  }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
